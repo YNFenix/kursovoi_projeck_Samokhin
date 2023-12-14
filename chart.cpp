@@ -18,7 +18,6 @@ Chart::Chart(QWidget* parent, MainWindow* mainWindow)
 
     dataManager = new DataManager();
     setupChart();
-
 }
 
 Chart::~Chart()
@@ -40,7 +39,6 @@ void Chart::setupChart()
     chart->setTitle("Weight Chart");
     QLineSeries *series = new QLineSeries();
 
-    // Retrieve data from the model and add it to the chart series
     QSqlTableModel *model = dataManager->getDataModel();
     int rowCount = model->rowCount();
     for (int i = 0; i < rowCount; ++i) {
